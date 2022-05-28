@@ -12,7 +12,7 @@ const Home = () => {
         <Button kind="btn-1" />
         <Button kind="btn-2" />
         <Button kind="btn-3" />
-        <Button />
+        <Button kind="btn-4" />
       </div>
     </div>
   );
