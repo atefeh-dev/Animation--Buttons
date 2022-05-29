@@ -14,6 +14,7 @@ const Home = () => {
         <Button kind="btn-3" />
         <Button kind="btn-4" />
         <Button kind="btn-5" />
+        <Button kind="btn-6" />
       </div>
     </div>
   );
