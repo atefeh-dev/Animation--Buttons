@@ -15,6 +15,9 @@ const Home = () => {
         <Button kind="btn-4" />
         <Button kind="btn-5" />
         <Button kind="btn-6" />
+        <Button kind="btn-7" />
+        <Button kind="btn-8" />
+        <Button kind="btn-9" />
       </div>
     </div>
   );
