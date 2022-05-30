@@ -18,6 +18,7 @@ const Home = () => {
         <Button kind="btn-7" />
         <Button kind="btn-8" />
         <Button kind="btn-9" />
+        <Button kind="btn-10" />
       </div>
     </div>
   );
