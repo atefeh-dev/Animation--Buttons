@@ -20,6 +20,10 @@ const Home = () => {
         <Button kind="btn-9" />
         <Button kind="btn-10" />
         <Button kind="btn-11" />
+        <Button kind="btn-13" />
+        <Button kind="btn-14" />
+        <Button kind="btn-15" />
+        <Button kind="btn-16" />
       </div>
     </div>
   );
