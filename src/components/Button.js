@@ -1,9 +1,9 @@
 /** @format */
 
 import React from "react";
-const Button = ({ kind }) => {
+const Button = ({ kind, handleClick }) => {
   return (
-    <button className={`custom-btn ${kind}`}>
+    <button className={`custom-btn ${kind}`} onClick={handleClick}>
       <span>Read more</span>
     </button>
   );

@@ -2,6 +2,12 @@
 import "../style/App.css";
 import Button from "./Button";
 const Home = () => {
+  const handleClick = () => {
+    console.log("how you don?");
+  };
+  const handleClick2 = () => {
+    console.log("what's matter");
+  };
   return (
     <div className="container">
       <div className="title">
@@ -9,8 +15,8 @@ const Home = () => {
         <p>Hover us and enjoy the satisfying neumorphic animation designs!</p>
       </div>
       <div className="frame">
-        <Button kind="btn-1" />
-        <Button kind="btn-2" />
+        <Button kind="btn-1" handleClick={handleClick} />
+        <Button kind="btn-2" handleClick={handleClick2} />
         <Button kind="btn-3" />
         <Button kind="btn-4" />
         <Button kind="btn-5" />
