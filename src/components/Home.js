@@ -4,8 +4,10 @@ import Button from "./Button";
 import { useState } from "react";
 const Home = () => {
   const [isButtonLoading, setIsButtonLoading] = useState(false);
+  const [isButtonLoadingTwo, setIsButtonLoadingTwo] = useState(false);
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     setIsButtonLoading(true);
     setTimeout(() => {
       setIsButtonLoading(false);
@@ -13,7 +15,11 @@ const Home = () => {
     console.log("how you don?");
   };
 
-  const handleClick2 = () => {
+  const handleClick2 = (e) => {
+    e.preventDefault();
+    setTimeout(() => {
+      setIsButtonLoadingTwo(false);
+    }, 1000);
     console.log("what's matter");
   };
 
@@ -25,13 +31,16 @@ const Home = () => {
       </div>
       <div className="frame">
         <Button
-          kind="btn-1"
-          onClick={handleClick}
+          kind="btn-2"
+          onClick={(e) => handleClick(e)}
           width="100%"
           isLoading={isButtonLoading}>
           Read more
         </Button>
-        <Button kind="btn-2" onClick={handleClick2}>
+        <Button
+          kind="btn-1"
+          onClick={(e) => handleClick2(e)}
+          isLoading={isButtonLoadingTwo}>
           Read more
         </Button>
         <Button kind="btn-3">Read more</Button>
