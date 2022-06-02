@@ -3,24 +3,26 @@ import "../style/App.css";
 import Button from "./Button";
 import { useState } from "react";
 const Home = () => {
-  const [isButtonLoading, setIsButtonLoading] = useState(false);
-  const [isButtonLoadingTwo, setIsButtonLoadingTwo] = useState(false);
+  const [isButtonLoading, setIsButtonLoading] = useState("");
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    setIsButtonLoading(true);
+  const fetchData = async (btnKey) => {
+    setIsButtonLoading(btnKey);
+    console.log(isButtonLoading);
+    const res = await fetch("google.com");
+    if (res.ok) {
+      console.log(res);
+    }
     setTimeout(() => {
-      setIsButtonLoading(false);
+      setIsButtonLoading("");
     }, 1000);
-    console.log("how you don?");
   };
 
-  const handleClick2 = (e) => {
-    e.preventDefault();
+  const btnLoadingHandler = (btnKey) => {
+    setIsButtonLoading(btnKey);
     setTimeout(() => {
-      setIsButtonLoadingTwo(false);
+      setIsButtonLoading("");
     }, 1000);
-    console.log("what's matter");
+    console.log("how you don?");
   };
 
   return (
@@ -31,16 +33,20 @@ const Home = () => {
       </div>
       <div className="frame">
         <Button
-          kind="btn-2"
-          onClick={(e) => handleClick(e)}
+          kind="btn-1"
+          onClick={(e) => {
+            fetchData("btn-1");
+          }}
           width="100%"
-          isLoading={isButtonLoading}>
+          isLoading={isButtonLoading === "btn-1"}>
           Read more
         </Button>
         <Button
-          kind="btn-1"
-          onClick={(e) => handleClick2(e)}
-          isLoading={isButtonLoadingTwo}>
+          kind="btn-2"
+          onClick={(e) => {
+            fetchData("btn-2");
+          }}
+          isLoading={isButtonLoading === "btn-2"}>
           Read more
         </Button>
         <Button kind="btn-3">Read more</Button>
